@@ -6,6 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="main.css">
         <title>Main Page</title>
+        <link
+        rel="stylesheet"
+        href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+        />
     </head>
 
     <body>
@@ -43,10 +47,12 @@
                     <h1>Международные соревнования</h1>
                     <p>По продвижению
                         научных и технологических профессий среди молодежи</p>
-                    <button>Зарегистрировать команду</button>
+                    <div class="hero-image__button">
+                        <button class="button">Зарегистрировать команду</button>
+                    </div>
                 </div>
             </div>
-        </section>        
+        </section>         
         <!-- / hero-image -->
 
         <!-- registration -->
@@ -66,7 +72,26 @@
         <!-- directions -->
         <section class="wrapper-outer section-directions">
             <div class="wrapper-inner">
-                directions
+                <div class="section-directions__heading-underlined">
+                    <h3>Соревновательные направления</h3>
+                    <div class="heading-underline"></div>
+                </div>
+                <div class="card1">
+                    <img src="images/directions/card1.png">
+                    <div class="card1__text">
+                        <h2>FIRST® LEGO® LEAGUE</h2>
+                        <p>Возраст участников: 4-16 лет </p>
+                        <button class="button">Подробнее</button>
+                    </div>
+                </div>
+                <div class="card2">
+                    <div class="card2__text">
+                        <h2>FIRST® TECH CHALLENGE</h2>
+                        <p>Возраст участников: 12-18 лет </p>
+                        <button class="button">Подробнее</button>
+                        <img src="images/directions/card2.png">
+                    </div>
+                </div>
             </div>
         </section>        
         <!-- / directions -->
@@ -74,7 +99,65 @@
         <!-- partners -->
         <section class="wrapper-outer section-partners">
             <div class="wrapper-inner">
-                partners
+                <h3>Партнеры</h3>
+                <div class="swiper">
+                    <div class="image-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="image-slider__image">
+                                    <img src="images/partners/logos/logo (1).png" alt="SDU logo">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="image-slider__image">
+                                    <img src="images/partners/logos/logo (2).png" alt="HaileyBury Almaty logo">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="image-slider__image">
+                                    <img src="images/partners/logos/logo (3).png" alt="High Tech Academy logo">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="image-slider__image">
+                                    <img src="images/partners/logos/logo (4).png" alt="LEGO education logo">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="image-slider__image">
+                                    <img src="images/partners/logos/logo (5).png" alt="DARYN logo">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="image-slider__image">
+                                    <img src="images/partners/logos/logo (6).png" alt="The Ministry of Education and Science of the Republic logo">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="image-slider__image">
+                                    <img src="images/partners/logos/logo (7).png" alt="KazRobotics Republican Pubcic Association logo">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="image-slider__image">
+                                    <img src="images/partners/logos/logo (8).png" alt="School Named After Shokan Ualihanov logo">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="image-slider__image">
+                                    <img src="images/partners/logos/logo (9).png" alt="Caravan of Knowledge logo">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="image-slider__image">
+                                    <img src="images/partners/logos/logo (10).png" alt="First Logo">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"><img src="images/partners/slider/right_button.png" alt="next slide button"></div>
+                        <div class="swiper-button-prev"><img src="images/partners/slider/left_button.png" alt="previous slide button"></div>
+                    </div>
+                </div>
             </div>
         </section>        
         <!-- / partners -->
@@ -94,5 +177,23 @@
             </div>
         </footer>        
         <!-- / footer -->
+
+        <!-- scripts -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script> 
+            const swiper = new Swiper('.image-slider', {
+                slidesPerView: 2,
+
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+
+                spaceBetween: 100,
+
+                speed: 600,
+            });
+        </script>
+        <!-- / scripts -->
     </body>
 </html>
