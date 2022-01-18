@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
+
+// === NULLIFYING STYLES ===
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+// === / NULLIFYING STYLES ===
+
+// === MIXINS ===
+@mixin railway {
+    font-family: 'Railway', sans-serif;
+}
+// === / Mixins ===
+
+// === VARIABLES ===
+
+// Font Weights
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+// Font Sizes
+$fs-xs: 1vw;
+$fs-s: 1.5vw;
+$fs-m: 2vw;
+$fs-l: 2.5vw;
+$fs-xl: 3.75vw;
+
+// Colors
+$white: #FFFFFF;
+$black: #252525;
+$blue: #304B7A;
+$green: #5BBCA1;
+
+// === / VARIABLES ===
+
+// === COMMON STYLES ===
+
+body {
+    @include railway;
+}
+
+* { 
+    color: $white;
+    font-weight: $fw-bold;
+}
+
+// .wrapper-outer {
+
+// }
+
+.wrapper-inner {
+    max-width: 90vw;
+    margin: 0 5vw;   
+}
+// === / COMMON STYLES ===
+
+// === HERO-IMAGE === 
+
+.section-hero-image {
+    background-image: url(images/hero-image/background.png);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    // font-size: 1vw;
+}
+
+.nav {
+    margin-left: 25vw;
+    & .nav-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+    & .nav-wrapper__item {
+        margin: 0 2vw;
+    }
+    & li {
+        border-bottom: 3px solid $blue;
+    }
+    & li:hover {
+        border-style: ;
+    }
+}
+
+// === / HERO-IMAGE === 
+
+// === REGISTRATION  ===
+
+// === / REGISTRATION  ===
+
+// === DIRECTIONS  ===
+
+// === / DIRECTIONS  ===
+
+// === PARTNERS  ===
+
+// === / PARTNERS  ===
+
+// === NEWS  ===
+
+// === / NEWS  ===
+
+// === FOOTER  ===
+
+// === / FOOTER  ===

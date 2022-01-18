@@ -168,7 +168,9 @@ body {
 .section-restaurants .list {
   display: -ms-grid;
   display: grid;
-  grid-template: repeat(3, 1fr)/repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[3];
+  -ms-grid-columns: (1fr)[3];
+      grid-template: repeat(3, 1fr)/repeat(3, 1fr);
   grid-gap: 2vw;
 }
 
@@ -178,7 +180,9 @@ body {
 
 @media screen and (max-width: 760px) {
   .section-restaurants .list {
-    grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+    -ms-grid-rows: (1fr)[2];
+    -ms-grid-columns: (1fr)[2];
+        grid-template: repeat(2, 1fr)/repeat(2, 1fr);
   }
   .section-restaurants img {
     width: 47.5vw;
@@ -190,7 +194,9 @@ body {
 
 @media screen and (max-width: 320px) {
   .section-restaurants .list {
-    grid-template: repeat(1, 1fr)/repeat(1, 1fr);
+    -ms-grid-rows: (1fr)[1];
+    -ms-grid-columns: (1fr)[1];
+        grid-template: repeat(1, 1fr)/repeat(1, 1fr);
   }
   .section-restaurants img {
     width: 99vw;
@@ -347,7 +353,7 @@ body {
 
 .footer__list1 .social > *:hover {
   -webkit-filter: invert(46%) sepia(9%) saturate(14%) hue-rotate(54deg) brightness(98%) contrast(94%);
-  filter: invert(46%) sepia(9%) saturate(14%) hue-rotate(54deg) brightness(98%) contrast(94%);
+          filter: invert(46%) sepia(9%) saturate(14%) hue-rotate(54deg) brightness(98%) contrast(94%);
   cursor: pointer;
 }
 
