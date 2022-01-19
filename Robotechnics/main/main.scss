@@ -59,6 +59,10 @@ h3 {
     font-weight: $fw-semi-bold;
     color: $black;
 }
+h4 {
+    font-size: $fs-s;
+    color: $blue;
+}
 
 // .wrapper-outer {
 
@@ -268,9 +272,7 @@ h3 {
     }
 }
 
-.image-slider {
-    position: relative;
-}
+.image-slider {position: relative;}
 
 .swiper-slide {
     position: relative;
@@ -278,21 +280,45 @@ h3 {
 }
 
 .swiper-button-next::after,
-.swiper-button-prev::after {
-    display: none;
-}
+.swiper-button-prev::after {display: none;}
 
-.swiper-button-next {
-    margin-right: 1vw;
-} 
-.swiper-button-prev {
-    margin-left: 1vw;;
-}
-
-
+.swiper-button-next {margin-right: 1vw;} 
+.swiper-button-prev {margin-left: 1vw;}
 // === / PARTNERS  ===
 
 // === NEWS  ===
+.section-news {
+    text-align: center;
+    background-color: #F2FFFB;
+    & .section-news__heading-underlined {
+        padding: 5vw 0;
+    }
+    & .button {  
+        margin-top: 5vw;
+        background-color: $green;
+    }
+    & h3 {
+        text-align: left;
+    }
+}
+
+.section-news__list {
+    display: flex;
+    justify-content: space-evenly;
+    & li {
+        padding: 2.5vw;
+        background-color: $white;
+        width: 25vw;
+        border-radius: 30px;
+        box-shadow: 0px 0px 20px 12px rgba(242, 242, 242, 0.4);
+        & > * {
+            text-align: left;
+        }
+        & img {
+            width: 20vw;
+        }
+    }
+}
 
 // === / NEWS  ===
 

@@ -33,6 +33,11 @@ h3 {
   color: #252525;
 }
 
+h4 {
+  font-size: 1.5vw;
+  color: #304B7A;
+}
+
 .wrapper-inner {
   max-width: 80vw;
   margin: 0 10vw;
@@ -290,5 +295,49 @@ h3 {
 
 .swiper-button-prev {
   margin-left: 1vw;
+}
+
+.section-news {
+  text-align: center;
+  background-color: #F2FFFB;
+}
+
+.section-news .section-news__heading-underlined {
+  padding: 5vw 0;
+}
+
+.section-news .button {
+  margin-top: 5vw;
+  background-color: #5BBCA1;
+}
+
+.section-news h3 {
+  text-align: left;
+}
+
+.section-news__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.section-news__list li {
+  padding: 2.5vw;
+  background-color: #FFFFFF;
+  width: 25vw;
+  border-radius: 30px;
+  -webkit-box-shadow: 0px 0px 20px 12px rgba(242, 242, 242, 0.4);
+          box-shadow: 0px 0px 20px 12px rgba(242, 242, 242, 0.4);
+}
+
+.section-news__list li > * {
+  text-align: left;
+}
+
+.section-news__list li img {
+  width: 20vw;
 }
 /*# sourceMappingURL=main.css.map */
