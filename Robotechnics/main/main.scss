@@ -290,6 +290,9 @@ h4 {
 .section-news {
     text-align: center;
     background-color: #F2FFFB;
+    & .wrapper-inner {
+        padding: 5vw 0;
+    }
     & .section-news__heading-underlined {
         padding: 5vw 0;
     }
@@ -305,7 +308,9 @@ h4 {
 .section-news__list {
     display: flex;
     justify-content: space-evenly;
+    column-gap: 2.5vw;
     & li {
+        position: relative;
         padding: 2.5vw;
         background-color: $white;
         width: 25vw;
@@ -313,15 +318,88 @@ h4 {
         box-shadow: 0px 0px 20px 12px rgba(242, 242, 242, 0.4);
         & > * {
             text-align: left;
+            padding-top: 1vw;
         }
         & img {
             width: 20vw;
         }
+        & p, span {
+            font-size: $fs-xs;
+            font-weight: $fw-regular;
+        }
+        & p {
+            color: $black;
+            padding-bottom: 5vw;
+        }
+        & span {
+            position: absolute;
+            bottom: 2.5vw;
+            right: 2.5vw;
+            color: #959595;
+        }
     }
 }
-
 // === / NEWS  ===
 
 // === FOOTER  ===
+.section-footer {
+    background-color: $blue;
+    padding: 5vw 0 3vw 0;
+    & .section-footer__about {
+        & > * {
+            display: inline-block;
+        }
+        margin-bottom: 5vw;
+    }
+    & h4 { 
+        color: $white;
+    }
+    & .section-footer__text {
+        color: #B0B0B0;
+        font-size: 0.7vw;
+        font-weight: $fw-regular;
+        text-align: center;
+    }
+}
 
+.section-footer__left-block {
+    margin-right: 15vw;
+    width: 35vw;
+    & img {
+        width: 10vw;
+        padding-bottom: 3vw;
+    }
+    & h4 {
+        font-weight: $fw-regular;
+    }
+}   
+
+.section-footer__right-block {
+    & > * {
+        padding: 1vw;
+    }
+    & .section-footer__phone {
+        display: flex;
+        & img { 
+            width: 2.5vw;
+            padding-right: 1vw;
+        }
+        padding-bottom: 3vw;
+    }
+    & p {
+        font-weight: $fw-regular;
+        font-size: $fs-s;
+    }
+    & .section-footer__social {
+        & img {
+            width: 3vw;
+            padding-right: 1vw;
+        }
+    }
+    & a {
+        font-size: $fs-xs;
+        color: #848CA8;
+        text-decoration: underline;
+    }
+}
 // === / FOOTER  ===
