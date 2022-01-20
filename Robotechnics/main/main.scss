@@ -1,58 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap');
-
-// === NULLIFYING STYLES ===
-* {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-}
-// === / NULLIFYING STYLES ===
-
-// === MIXINS ===
-@mixin railway {
-    font-family: 'Railway', sans-serif;
-}
-// === / Mixins ===
-
-// === VARIABLES ===
-
-// Font Weights
-$fw-regular: 400;
-$fw-medium: 500;
-$fw-semi-bold: 700;
-$fw-bold: 700;
-
-// Font Sizes
-$fs-xs: 1vw;
-$fs-s: 1.5vw;
-$fs-m: 2vw;
-$fs-l: 2.5vw;
-$fs-xl: 3.75vw;
-
-// Colors
-$white: #FFFFFF;
-$black: #252525;
-$blue: #304B7A;
-$green: #5BBCA1;
-
-// === / VARIABLES ===
+@import '../common.scss';
 
 // === COMMON STYLES ===
-
-body {
-    @include railway;
-}
-
 * { 
     color: $white;
     font-weight: $fw-bold;
-    letter-spacing: 1px;
-    @media screen and (max-width: 375px) {
-        letter-spacing: normal;
-    }
 }
 
 h1 {font-size: $fs-xl;}
@@ -74,24 +26,13 @@ h4 {
     h4 {font-size: $fs-s * 4;}
 }
 
-// .wrapper-outer {
-
-// }
-
-.wrapper-inner {
-    max-width: 80vw;
-    margin: 0 10vw;   
-    @media screen and (max-width: 375px){
-        max-width: 90vw;
-        margin: 0 5vw;
-    }
-}
-
 .button {
-    padding: 1vw 3vw;
     background-color: $white;
+    border-radius: 15px;
+    display: block; 
+    width: fit-content;
     font-size: $fs-xs;
-    border-radius: 15px; 
+    padding: 1vw 3vw;
     transition: all 0.2s ease-in-out;
     &:hover {
         background-color: darken($white, 30%);
@@ -318,6 +259,9 @@ h4 {
         position: relative;
         border-radius: 20px;
         & > div {
+            display: flex;
+            flex-direction: column;
+            position: relative;
             padding: 5vw;
             & h2 { 
                 margin-bottom: 1vw;
@@ -333,7 +277,6 @@ h4 {
         color: $black;
     }
     & .section-directions__heading-underlined {
-        position: relative;
         margin-bottom: 5vw;
     }
     @media screen and (max-width: 375px) {
@@ -368,25 +311,28 @@ h4 {
     }
     & img {
         top: -2vw;
-        right: -5vw;
+        right: -6vw;
     }
     @media screen and (max-width: 375px) {
         & > div {
             width: 60vw;
         }
         & img {
-            top: 7vw;
+            top: 10vw;
+            right: -4vw;   
         }
     }
 }
 
 .card2 {
+    text-align: right;
     background-color: $blue;
     & .button {
+        background-color: $white;
         color: $blue;
     }
     & > .card2__text { 
-        text-align: right;
+        align-items: flex-end;
     }
     & img {
         top: -4vw;
@@ -398,7 +344,8 @@ h4 {
             width: 60vw;
         }
         & img {
-            top: 5vw
+            top: 9vw;
+            left: -34vw;
         }
     }
 }
@@ -531,6 +478,9 @@ h4 {
         }
         & a {
             color: $blue;
+            &:hover {
+                color: lighten($blue, 10%);
+            }
         }
     }
     @media screen and (max-width: 375px) {

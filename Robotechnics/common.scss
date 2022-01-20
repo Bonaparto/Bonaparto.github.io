@@ -1,0 +1,59 @@
+// === NULLIFYING STYLES ===
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    letter-spacing: 1px;
+    @media screen and (max-width: 375px) {
+        letter-spacing: normal;
+    }
+}
+// === / NULLIFYING STYLES ===
+
+// === MIXINS ===
+@mixin railway {
+    font-family: 'Railway', sans-serif;
+}
+// === / Mixins ===
+
+// === VARIABLES ===
+
+// Font Weights
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;
+$fw-black: 900;
+
+// Font Sizes
+$fs-xs: 1vw;
+$fs-s: 1.5vw;
+$fs-m: 2vw;
+$fs-l: 2.5vw;
+$fs-xl: 3.75vw;
+
+// Colors
+$white: #FFFFFF;
+$black: #252525;
+$blue: #304B7A;
+$green: #5BBCA1;
+
+// === / VARIABLES ===
+
+// === COMMON STYLES ===
+
+body {
+    @include railway;
+}
+
+.wrapper-inner {
+    max-width: 80vw;
+    margin: 0 10vw;   
+    @media screen and (max-width: 375px){
+        max-width: 90vw;
+        margin: 0 5vw;
+    }
+}

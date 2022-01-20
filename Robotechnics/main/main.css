@@ -7,15 +7,6 @@
           box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-}
-
-body {
-  font-family: 'Railway', sans-serif;
-}
-
-* {
-  color: #FFFFFF;
-  font-weight: 700;
   letter-spacing: 1px;
 }
 
@@ -23,6 +14,27 @@ body {
   * {
     letter-spacing: normal;
   }
+}
+
+body {
+  font-family: 'Railway', sans-serif;
+}
+
+.wrapper-inner {
+  max-width: 80vw;
+  margin: 0 10vw;
+}
+
+@media screen and (max-width: 375px) {
+  .wrapper-inner {
+    max-width: 90vw;
+    margin: 0 5vw;
+  }
+}
+
+* {
+  color: #FFFFFF;
+  font-weight: 700;
 }
 
 h1 {
@@ -35,7 +47,7 @@ h2 {
 
 h3 {
   font-size: 2vw;
-  font-weight: 700;
+  font-weight: 600;
   color: #252525;
 }
 
@@ -59,23 +71,15 @@ h4 {
   }
 }
 
-.wrapper-inner {
-  max-width: 80vw;
-  margin: 0 10vw;
-}
-
-@media screen and (max-width: 375px) {
-  .wrapper-inner {
-    max-width: 90vw;
-    margin: 0 5vw;
-  }
-}
-
 .button {
-  padding: 1vw 3vw;
   background-color: #FFFFFF;
-  font-size: 1vw;
   border-radius: 15px;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1vw;
+  padding: 1vw 3vw;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -376,6 +380,14 @@ h4 {
 }
 
 .section-directions div > div ~ div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
   padding: 5vw;
 }
 
@@ -394,7 +406,6 @@ h4 {
 }
 
 .section-directions .section-directions__heading-underlined {
-  position: relative;
   margin-bottom: 5vw;
 }
 
@@ -430,7 +441,7 @@ h4 {
 
 .card1 img {
   top: -2vw;
-  right: -5vw;
+  right: -6vw;
 }
 
 @media screen and (max-width: 375px) {
@@ -438,20 +449,25 @@ h4 {
     width: 60vw;
   }
   .card1 img {
-    top: 7vw;
+    top: 10vw;
+    right: -4vw;
   }
 }
 
 .card2 {
+  text-align: right;
   background-color: #304B7A;
 }
 
 .card2 .button {
+  background-color: #FFFFFF;
   color: #304B7A;
 }
 
 .card2 > .card2__text {
-  text-align: right;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .card2 img {
@@ -467,7 +483,8 @@ h4 {
     width: 60vw;
   }
   .card2 img {
-    top: 5vw;
+    top: 9vw;
+    left: -34vw;
   }
 }
 
@@ -642,6 +659,10 @@ h4 {
 
 .section-news__list li a {
   color: #304B7A;
+}
+
+.section-news__list li a:hover {
+  color: #3e629f;
 }
 
 @media screen and (max-width: 375px) {

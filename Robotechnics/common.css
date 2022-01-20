@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 375px) {
+  * {
+    letter-spacing: normal;
+  }
+}
+
+body {
+  font-family: 'Railway', sans-serif;
+}
+
+.wrapper-inner {
+  max-width: 80vw;
+  margin: 0 10vw;
+}
+
+@media screen and (max-width: 375px) {
+  .wrapper-inner {
+    max-width: 90vw;
+    margin: 0 5vw;
+  }
+}
+/*# sourceMappingURL=common.css.map */
