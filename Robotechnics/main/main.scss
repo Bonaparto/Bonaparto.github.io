@@ -71,7 +71,7 @@ h4 {
     h1 {font-size: $fs-xl * 2.5;}
     h2 {font-size: $fs-l * 2.5;}
     h3 {font-size: $fs-m * 2.5;}
-    h4 {font-size: $fs-s * 2.5;}
+    h4 {font-size: $fs-s * 4;}
 }
 
 // .wrapper-outer {
@@ -97,7 +97,7 @@ h4 {
         background-color: darken($white, 30%);
     }
     @media screen and (max-width: 375px) {
-        font-size: $fs-xs * 4;
+        font-size: $fs-xs * 5;
         padding: 3vw 5vw;
     }
 }
@@ -155,7 +155,7 @@ h4 {
     @media screen and (max-width: 375px) {
         padding-bottom: 20vw;
         & img {
-            width: 25vw;
+            width: 40vw;
         }
     }
 }
@@ -181,8 +181,14 @@ h4 {
     & a:hover + div{
         background: $green;
     }
+    & img {
+        width: 7vw;
+    }
     @media screen and (max-width: 375px) {
-        display: none;
+        padding-left: 40vw;
+        & .nav-wrapper__item {
+            display: none;
+        }
     }
 }
 
@@ -209,10 +215,10 @@ h4 {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: auto;
+        width: fit-content;
         padding-bottom: 20vw;
         & p {
-            font-size: $fs-xs * 4;
+            font-size: $fs-xs * 5;
             margin-top: 5vw;
             margin-bottom: 10vw;
         }
@@ -251,10 +257,8 @@ h4 {
 
 .player {
     position: absolute;
-    top: 15vw;
+    top: 21vw;
     right: 0;
-    width: 35vw;
-    height: 25vw;
     background-color: #CAEEE4;
     border-radius: 20px 0 0 20px;
     box-shadow: 0px 32px 44px rgba(129, 138, 140, 0.4);
@@ -264,6 +268,14 @@ h4 {
     }
     @media screen and (max-width: 375px) {
         position: initial;
+        border-radius: 20px;
+        margin-left: 5vw;
+        text-align: center;
+        width: fit-content;
+        & img {
+            margin: 5vw;
+            width: 80vw;
+        }
     }
 }
 
@@ -279,12 +291,14 @@ h4 {
         margin-top: 2vw;
         color: $black;
         font-weight: $fw-regular;
+        font-size: $fs-s;
     }
     @media screen and (max-width: 375px) {
         width: 100vw;
         padding: 5vw 5vw 10vw 5vw;
         & p {
             margin-top: 10vw;
+            font-size: $fs-m * 2.5;
         }
     }
 }
@@ -336,7 +350,7 @@ h4 {
                 & p {
                     margin-bottom: 10vw;
                     font-weight: $fw-regular;
-                    font-size: $fs-xs * 4;
+                    font-size: $fs-xs * 5;
                 }  
             }
         }
@@ -402,20 +416,57 @@ h4 {
     & img {
         width: 20vw;
     }
+    @media screen and (max-width: 375px) {
+        & h3 {
+            margin-bottom: 20vw;
+        }
+        & img {
+            width: 30vw;
+        }
+    }
 }
 
-.image-slider {position: relative;}
+.image-slider {
+    position: relative;
+    @media screen and (max-width: 375px) {
+        padding-bottom: 30vw;
+    }
+}
 
 .swiper-slide {
-    position: relative;
+    position: absolute;
     left: 10%;
+    @media screen and (max-width: 375px) {
+        left: 7%;
+    }
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {display: none;}
 
-.swiper-button-next {margin-right: 1vw;} 
-.swiper-button-prev {margin-left: 1vw;}
+.swiper-button-next {
+    margin-right: 1vw;
+    @media screen and (max-width: 375px) {
+        margin-right: 20vw;
+    }
+} 
+.swiper-button-prev {
+    margin-left: 1vw;
+    @media screen and (max-width: 375px) {
+        margin-left: 20vw;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        top: 50vw !important;
+        & > img {
+            width: 15vw;
+        }
+    }
+}
 // === / PARTNERS  ===
 
 // === NEWS  ===
@@ -429,11 +480,20 @@ h4 {
         padding: 5vw 0;
     }
     & .button {  
-        margin-top: 5vw;
+        display: block;
         background-color: $green;
+        margin: 5vw auto 0 auto;
+        width: fit-content;
     }
     & h3 {
         text-align: left;
+    }
+    @media screen and (max-width: 375px) {
+        padding: 10vw 0;
+        & .button {  
+            width: fit-content;
+            margin: 5vw auto 0 auto;
+        }
     }
 }
 
@@ -442,12 +502,12 @@ h4 {
     justify-content: space-evenly;
     column-gap: 2.5vw;
     & li {
-        position: relative;
-        padding: 2.5vw;
         background-color: $white;
-        width: 25vw;
         border-radius: 30px;
         box-shadow: 0px 0px 20px 12px rgba(242, 242, 242, 0.4);
+        position: relative;
+        padding: 2.5vw;
+        width: fit-content;
         & > * {
             text-align: left;
             padding-top: 1vw;
@@ -468,6 +528,29 @@ h4 {
             bottom: 2.5vw;
             right: 2.5vw;
             color: #959595;
+        }
+        & a {
+            color: $blue;
+        }
+    }
+    @media screen and (max-width: 375px) {
+        flex-direction: column;
+        align-items: center;
+        & li {
+            width: fit-content;
+            margin: 5vw 0;
+            & > * {
+                padding-top: 5vw;
+            }
+            & img {
+                width: 85vw;
+            }
+            & p, span {
+                font-size: $fs-xs * 5;
+            }
+            & p {
+                padding-bottom: 20vw;
+            }
         }
     }
 }
@@ -492,6 +575,20 @@ h4 {
         font-weight: $fw-regular;
         text-align: center;
     }
+    @media screen and (max-width: 375px) {
+        padding: 10vw 0 6vw 0;
+        & .section-footer__about {
+            & > * {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            margin-bottom: 10vw;
+        }
+        & .section-footer__text {
+            font-size: $fs-l;
+        }
+    }
 }
 
 .section-footer__left-block {
@@ -503,6 +600,15 @@ h4 {
     }
     & h4 {
         font-weight: $fw-regular;
+    }
+    @media screen and (max-width: 375px) {
+        width: fit-content;
+        margin-right: 0;
+        margin-bottom: 5vw;
+        & img {
+            width: 40vw;
+            padding-bottom: 6vw;
+        }
     }
 }   
 
@@ -532,6 +638,31 @@ h4 {
         font-size: $fs-xs;
         color: #848CA8;
         text-decoration: underline;
+    }
+    @media screen and (max-width: 375px) {
+        & > * {
+            padding: 4vw 0 4vw 0;
+        }
+        & .section-footer__phone {
+            display: flex;
+            & img { 
+                width: 10vw;
+                padding-right: 3vw;
+            }
+            padding-bottom: 6vw;
+        }
+        & p {
+            font-size: $fs-s * 4;
+        }
+        & .section-footer__social {
+            & img {
+                width: 14vw;
+                padding-right: 4vw;
+            }
+        }
+        & a {
+            font-size: $fs-xs * 4;
+        }
     }
 }
 // === / FOOTER  ===
