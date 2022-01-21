@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
 // === NULLIFYING STYLES ===
 * {
     padding: 0;
@@ -17,6 +18,16 @@
 @mixin railway {
     font-family: 'Railway', sans-serif;
 }
+
+@mixin button-colors($bgc, $c) {
+    background-color: $bgc;
+    color: $c;
+    border: 3px solid $c;
+    &:hover {
+        background-color: $c;
+        color: $bgc;
+    }
+}
 // === / Mixins ===
 
 // === VARIABLES ===
@@ -26,6 +37,7 @@ $fw-regular: 400;
 $fw-medium: 500;
 $fw-semi-bold: 600;
 $fw-bold: 700;
+$fw-extra-bold: 800;    
 $fw-black: 900;
 
 // Font Sizes
@@ -44,6 +56,9 @@ $green: #5BBCA1;
 // === / VARIABLES ===
 
 // === COMMON STYLES ===
+* {
+    font-weight: $fw-bold;
+}
 
 body {
     @include railway;
@@ -57,3 +72,201 @@ body {
         margin: 0 5vw;
     }
 }
+
+.button {
+    border-radius: 15px;
+    display: block; 
+    font-size: $fs-xs;
+    padding: 1vw 3vw;
+    width: fit-content;
+    transition: all 0.2s ease-in-out;
+    @media screen and (max-width: 375px) {
+        font-size: $fs-xs * 5;
+        padding: 3vw 5vw;
+    }
+}
+
+h1 {font-size: $fs-xl;}
+h2 {font-size: $fs-l;}
+h3 {font-size: $fs-m;}
+h4 {font-size: $fs-s;}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {display: none;}
+
+// === / COMMON STYLES ===
+
+// === HEADER ===
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 2vw;
+    padding-bottom: 10vw;
+    & img {
+        width: 8vw;
+    }
+    @media screen and (max-width: 375px) {
+        padding-bottom: 20vw;
+        & img {
+            width: 40vw;
+        }
+    }
+}
+
+.nav {
+    font-size: $fs-xs;
+    padding-left: 10vw;
+    & .nav-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+    & .nav-wrapper__item {
+        margin: 0 2vw;
+    }
+    & .item-link__underline {
+        width: 60%;
+        height: 15%;
+        border-radius: 5px;
+        margin: 0.3vw auto;
+        transition: all 0.3s ease-in-out;
+    }
+    & a:hover + div{
+        background: $green;
+    }
+    & img {
+        width: 7vw;
+    }
+    @media screen and (max-width: 375px) {
+        padding-left: 40vw;
+        & .nav-wrapper__item {
+            display: none;
+        }
+    }
+}
+
+.heading-underline {
+    padding: 0;
+    margin: 0;
+    width: 30%;
+    height: 0.5vw;
+    background-color: $green;
+    margin-top: 2vw;
+    border-radius: 6px;
+    @media screen and(max-width: 375px) {
+        width: 60%;
+        height: 1.5vw;
+    }
+}
+// === / HEADER ===
+
+// === FOOTER  ===
+.section-footer {
+    background-color: $blue;
+    padding: 3vw 0 3vw 0;
+    & .section-footer__about {
+        & > * {
+            display: inline-block;
+        }
+        margin-bottom: 5vw;
+    }
+    & h4 { 
+        color: $white;
+    }
+    & .section-footer__text {
+        color: #B0B0B0;
+        font-size: 0.7vw;
+        font-weight: $fw-regular;
+        text-align: center;
+    }
+    @media screen and (max-width: 375px) {
+        padding: 10vw 0 6vw 0;
+        & .section-footer__about {
+            & > * {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            margin-bottom: 10vw;
+        }
+        & .section-footer__text {
+            font-size: $fs-l;
+        }
+    }
+}
+
+.section-footer__left-block {
+    margin-right: 15vw;
+    width: 35vw;
+    & img {
+        width: 10vw;
+        padding-bottom: 3vw;
+    }
+    & h4 {
+        font-weight: $fw-regular;
+    }
+    @media screen and (max-width: 375px) {
+        width: fit-content;
+        margin-right: 0;
+        margin-bottom: 5vw;
+        & img {
+            width: 40vw;
+            padding-bottom: 6vw;
+        }
+    }
+}   
+
+.section-footer__right-block {
+    & > * {
+        padding: 1vw;
+    }
+    & .section-footer__phone {
+        display: flex;
+        & img { 
+            width: 2.5vw;
+            padding-right: 1vw;
+        }
+        padding-bottom: 3vw;
+    }
+    & p {
+        font-weight: $fw-regular;
+        font-size: $fs-s;
+    }
+    & .section-footer__social {
+        & img {
+            width: 3vw;
+            padding-right: 1vw;
+        }
+    }
+    & a {
+        font-size: $fs-xs;
+        color: #848CA8;
+        text-decoration: underline;
+    }
+    @media screen and (max-width: 375px) {
+        & > * {
+            padding: 4vw 0 4vw 0;
+        }
+        & .section-footer__phone {
+            display: flex;
+            & img { 
+                width: 10vw;
+                padding-right: 3vw;
+            }
+            padding-bottom: 6vw;
+        }
+        & p {
+            font-size: $fs-s * 4;
+        }
+        & .section-footer__social {
+            & img {
+                width: 14vw;
+                padding-right: 4vw;
+            }
+        }
+        & a {
+            font-size: $fs-xs * 4;
+        }
+    }
+}
+// === / FOOTER  ===

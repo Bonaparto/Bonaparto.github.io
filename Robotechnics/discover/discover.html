@@ -4,76 +4,265 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Discover Page</title>
+        <link rel="stylesheet" href="discover.css">
         <link
         rel="stylesheet"
         href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
         />
-        <link rel="stylesheet" href="http://moransh4.github.io/Luca/css/swiper.min.css">
     </head>
 
     <body>
-        <!-- header -->
-        <header class="wrapper-outer header">
+        <!-- HEADER -->
+        <section class="wrapper-outer discover-header">
             <div class="wrapper-inner">
-                header
-            </div>
-        </header>
-        <!-- / header -->
-
-        <!-- heading -->
-        <section class="wrapper-outer heading">
-            <div class="wrapper-inner">
-                heading
-            </div>
-        </section>
-        <!-- / heading -->
-
-        <!-- pagination -->
-        <section class="wrapper-outer pagination">
-            <div class="wrapper-inner">
-                pagination
-            </div>
-        </section>
-        <!-- / pagination -->
-
-        <!-- main-text -->
-        <section class="wrapper-outer main-text">
-            <div class="wrapper-inner">
-                main-text
-            </div>
-        </section>
-        <!-- / main-text -->
-
-        <!-- slider -->
-        <section class="wrapper-outer slider">
-            <div class="wrapper-inner">
-                slider
+                <header class="header">
+                    <img src="images/header/logo.png" alt="logo">
+                    <nav class="nav">
+                        <ul class="nav-wrapper">    
+                            <li class="nav-wrapper__item">
+                                <a href="../main/main.html"  class="nav-wrapper__item-link" target="_blank">Главная</a>          
+                                <div class="item-link__underline"></div>                 
+                            </li>
+                            <li class="nav-wrapper__item">
+                                <a href="" class="nav-wrapper__item-link">О нас</a>
+                                <div class="item-link__underline"></div>   
+                            </li>
+                            <li class="nav-wrapper__item">
+                                <a href="" class="nav-wrapper__item-link">FIRST LEGO LEAGUE</a>
+                                <div class="item-link__underline"></div>   
+                            </li>
+                            <li class="nav-wrapper__item">
+                                <a href="" class="nav-wrapper__item-link">FIRST TECH CHALLENGE</a>    
+                                <div class="item-link__underline"></div>   
+                            </li>
+                            <li class="nav-wrapper__item">
+                                <a href="" class="nav-wrapper__item-link">Оборудование</a>
+                                <div class="item-link__underline"></div>   
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
             </div>
         </section>
-        <!-- / slider -->
+        <!-- / HEADER -->
 
-        <!-- lessons -->
-        <section class="wrapper-outer lessons">
+        <!-- HEADING -->
+        <section class="wrapper-outer section-heading">
             <div class="wrapper-inner">
-                lessons
+                <div class="section-heading__heading">
+                    <h1>FIRST® LEGO®</h1>
+                    <h1 class="heading__second">LEAGUE DISCOVER</h1>
+                </div>
             </div>
         </section>
-        <!-- / lessons -->
+        <!-- / HEADING -->
 
-        <!-- team -->
-        <section class="wrapper-outer team">
+        <!-- PAGINATION -->
+        <section class="wrapper-outer section-pagination">
             <div class="wrapper-inner">
-                team
+                <ul class="pagination__list">
+                    <li class="pagination__item">О направлении</li>
+                    <li class="pagination__item">Команды</li>
+                    <li class="pagination__item">Материалы</li>
+                </ul>
+                <div class="pagination__underline"></div>
             </div>
         </section>
-        <!-- / team -->
+        <!-- / PAGINATION -->
+
+        <!-- DIRECTION PAGE -->
+
+            <!-- main-text -->
+            <section class="wrapper-outer section-main-text">
+                <div class="wrapper-inner">
+                    <h4>Соревновательное направление знакомит детей в возрасте 4-6 лет с миром науки, инженерии и STEAM в игровой форме и развивает природное любопытство и привычку учиться.</h4>
+                    <p>Данные требования к судейской бригаде разработаны АНО «Лаборатория по робототехнике «Инженеры будущего» являющейся, в соответствии заключенным соглашением (OPERATION PARTNER AGREEVENT RUSSIA) с LEGO Education International (Denmark), официальным уполномоченным национальным организатором Всероссийского чемпионата FIRST RUSSIA ROBOTICS CHAMPIONSHIP. </p>
+                    <p>Для решения задач, тесно связанных с реальным миром, дети используют наборы <span>«Планета STEAM»</span> и специально разработанный набор <span>LEGO DUPLO®.</span></p>
+                </div>
+            </section>
+            <!-- / main-text -->
+
+            <!-- slider -->
+            <section class="wrapper-outer slider">
+                <div class="wrapper-inner">
+                    <div class="swiper">
+                        <div class="image-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="image-slider__image">
+                                        <img src="images/slider/slide1.png" alt="children with letters on scene">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image-slider__image">
+                                        <img src="images/slider/slide1.png" alt="children with letters on scene">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"><img src="../main/images/partners/slider/right_button.png" alt="next slide button"></div>
+                            <div class="swiper-button-prev"><img src="../main/images/partners/slider/left_button.png" alt="previous slide button"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- / slider -->
+
+            <!-- lessons -->
+            <section class="wrapper-outer section-lessons">
+                <div class="wrapper-inner">
+                    <div class="section-lessons__heading">
+                        <h1>КАК ПРОХОДЯТ</h1>
+                        <h1 class="heading__second">ЗАНЯТИЯ?</h1>
+                    </div>
+                    <div class="section-lessons__list">
+                        <ul class="lessons-list">
+                            <li class="lessons-list__item">
+                                <img src="images/lessons/icons/group.svg" alt="icon of group of people">
+                                <div class="item__text">
+                                    <h3>Работа в команде</h3>
+                                    <p>Дети учатся работать в команде, помогать друг другу и распределять задачи. Вместе они узнают о том, как строить различные проекты, а также знакомятся с некоторыми вопросами проектирования.</p>
+                                </div>
+                            </li>
+                            <li class="lessons-list__item">
+                                <img src="images/lessons/icons/idea.svg" alt="icon of a lamp">
+                                <div class="item__text">
+                                    <h3>Развитие новых навыков</h3>
+                                    <p>В ходе программы дети будут мыслить и действовать, как архитекторы и инженеры: развивать наблюдательность, критичность мышления, умение собирать информацию и задавать дополнительные вопросы.</p>
+                                </div>
+                            </li>
+                            <li class="lessons-list__item">
+                                <img src="images/lessons/icons/contract.svg" alt="icon of a paper">
+                                <div class="item__text">
+                                    <h3>Опыт проектирования</h3>
+                                    <p>EНа каждом занятии они будут на собственном опыте осваивать процесс проектирования. Такое обучение не предусматривает строгого порядка: дети могут повторять каждый этап по несколько раз в течение одного занятия. Это значит, что в ходе урока они изучают тему и идеи, придумывают решения, проверяют их, воспроизводят и изменяют, а затем делятся с другими тем, чему они научились.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="lessons-list__image-wrapper">
+                            <img src="images/lessons/img.png" alt="boy constructing mechanisms">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- / lessons -->
+
+            <!-- team -->
+            <section class="wrapper-outer section-team">
+                <div class="wrapper-inner">
+                    <div class="section-team__heading">
+                        <h1>КАК СОЗДАТЬ</h1>
+                        <h1 class="heading__second">КОМАНДУ?</h1>
+                    </div>
+                    <div class="section-team__list">
+                        <ul class="team-list">
+                            <li class="team-list__item">
+                                <img src="images/team/1.svg" alt="paragraph 1">
+                                <div class="item__text">
+                                    <h3>Приобрести необходимое оборудование TEAM PACK:</h3>
+                                    <p>Каждая команда получит один набор "Грузовые перевозки", состоящий из определенного набора Lego деталей, трех карт строительства, а также методических материалов для педагога и участников.
+                                    Наборы предназначены для того, чтобы помочь детям включиться в тему и должны послужить отправной точкой обсуждения и дальнейшего конструирования.</p>
+                                </div>
+                            </li>
+                            <li class="team-list__item">
+                                <img src="images/team/2.svg" alt="paragraph 2">
+                                <div class="item__text">
+                                    <h3>Создать команду и пройти регистрацию</h3>
+                                    <p>В рамках программы дети работают в командах от двух до четырех человек с элементами набора LEGO Education WEDO 2.0 или первой версии и комплекта "Грузовые перевозки", предназначенного для изучения естественно-научных, технических, точных дисциплин и творчества (STEAM).
+                                    Посредством сотрудничества и общения дети совместно конструируют, учатся, играют. На каждом занятии детям помогают научиться работать в команде, слушать друг друга, действовать по очереди, обмениваться идеями и предметами.</p>
+                                </div>
+                            </li>
+                            <li class="team-list__item">
+                                <img src="images/team/3.svg" alt="paragraph 3">
+                                <div class="item__text">
+                                    <h3>Разработать свой проект</h3>
+                                    <p>Участники под руководством тренера на протяжении нескольких занятий конструируют свой проект, основные моменты каждый участник записывает в специально разработанную инженерную тетрадь (схемы, чертежи, рисунки, идеи), проводят совещания и мини-презентации экспертам в области своего проекта, создают совместно с тренером и родителями стиль команды и SHOW ME постер для защиты проекта.</p>
+                                </div>
+                            </li>
+                            <li class="team-list__item">
+                                <img src="images/team/4.svg" alt="paragraph 4">
+                                <div class="item__text">
+                                    <h3>Подготовить презентацию и выступить на соревнованиях</h3>
+                                    <p>Когда вы разработали проект, нужно заполнить все свои инженерные тетради, подготовить защиту своего проекта (рассказать об основных моментах), разработать свой SHOW ME постер придти на соревнования (муниципальный, городской, региональный, федеральный и международный уровни). Защитить свой проект и ответить на все интересующие вопросы экспертов.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="section-team__buttons">
+                        <button class="button">Зарегистрировать команду</button>
+                        <button class="button">Список команд</button>
+                    </div>
+                </div>
+            </section>
+            <!-- / team -->
+
+            <!-- player -->
+            <player class="wrapper-outer section-player">
+                <div class="wrapper-inner">
+                    <div class="player-wrapper">
+                        <iframe width="560" height="550" src="https://www.youtube.com/embed/x4IZiQx42yU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </player>
+            <!-- / player -->
+    
+        <!-- DIRECTION PAGE -->
+
+        <!-- TEAMS PAGE -->
+
+            
+            
+        <!-- / TEAMS PAGE -->
+
+        <!-- MATERIALS PAGE -->
+        <!-- / MATERIALS PAGE -->
 
         <!-- footer -->
-        <footer class="wrapper-outer footer">
+        <footer class="wrapper-outer section-footer">
             <div class="wrapper-inner">
-                footer
+                <div class="section-footer__about">
+                    <div class="section-footer__left-block">
+                        <img src="../main/images/hero-image/logo.svg" alt="logo">
+                        <h4>Оператор международных соревнований для детей в России и Казахстане</h4>
+                    </div>
+                    <div class="section-footer__right-block">
+                        <div class="section-footer__phone">
+                            <img src="../footer/phone_icon.svg" alt="phone icon">
+                            <h4>+7 700 444 6000</h4>
+                        </div>
+                        <p>info@ustemrobotics.com</p>
+                        <div class="section-footer__social">
+                            <img src="../footer/instagram.png" alt="">
+                            <img src="../footer/facebook.png" alt="">
+                        </div>
+                        <a href="">Политика конфиденциальности</a>
+                    </div>
+                </div>
+                <p class="section-footer__text">LEGO, логотип LEGO, логотип SPIKE и Минифигурка (Minifigure) являются товарными знаками и объектами авторского права корпорации LEGO Group. Данные объекты использованы с разрешения. ©2021 LEGO Group. FIRST® является зарегистрированным товарным знаком For Inspiration and Recognition of Science and Technology (FIRST). FIRST® LEGO® League является товарным знаком и находится в совместной собственности FIRST и LEGO Group. ©2021 FIRST и LEGO Group. Все права защищены.</p>
             </div>
-        </footer>
+        </footer>        
         <!-- / footer -->
+
+        <!-- scritps -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script> 
+            const swiper = new Swiper('.image-slider', {
+                slidesPerView: 1,
+
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,  
+                },
+
+                speed: 600,
+            });
+        </script>
+        <script src="adaptive.js"></script>
+        <!-- / scritps -->
     </body>
 </html>

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap');
 @import '../common.scss';
 
 // === COMMON STYLES ===
@@ -7,15 +6,11 @@
     font-weight: $fw-bold;
 }
 
-h1 {font-size: $fs-xl;}
-h2 {font-size: $fs-l;}
 h3 {
-    font-size: $fs-m;
     font-weight: $fw-semi-bold;
     color: $black;
 }
 h4 {
-    font-size: $fs-s;
     color: $blue;
 }
 
@@ -26,36 +21,6 @@ h4 {
     h4 {font-size: $fs-s * 4;}
 }
 
-.button {
-    background-color: $white;
-    border-radius: 15px;
-    display: block; 
-    width: fit-content;
-    font-size: $fs-xs;
-    padding: 1vw 3vw;
-    transition: all 0.2s ease-in-out;
-    &:hover {
-        background-color: darken($white, 30%);
-    }
-    @media screen and (max-width: 375px) {
-        font-size: $fs-xs * 5;
-        padding: 3vw 5vw;
-    }
-}
-
-.heading-underline {
-    padding: 0;
-    margin: 0;
-    width: 30%;
-    height: 0.5vw;
-    background-color: $green;
-    margin-top: 2vw;
-    border-radius: 6px;
-    @media screen and(max-width: 375px) {
-        width: 60%;
-        height: 1.5vw;
-    }
-}
 // === / COMMON STYLES ===
 
 // === HERO-IMAGE === 
@@ -64,14 +29,14 @@ h4 {
     background-image: url(images/hero-image/background.png);
     background-size: cover;
     .hero-image__contact {
-        position: absolute;
+        position: fixed;
+        z-index: 1;
         bottom: 2vw;
         right: 5vw;
         & > img {
             width: 5vw;
         }
         @media screen and (max-width: 375px) {
-            bottom: -25vw;
             & > img {
                 width: 20vw;
             }
@@ -81,55 +46,6 @@ h4 {
         text-align: center;
         background-color: $blue;
         background-image: url(images/hero-image/adaptive/background.png);
-    }
-}
-
-.hero-image__header {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    padding-top: 2vw;
-    padding-bottom: 10vw;
-    & img {
-        width: 8vw;
-    }
-    @media screen and (max-width: 375px) {
-        padding-bottom: 20vw;
-        & img {
-            width: 40vw;
-        }
-    }
-}
-
-.nav {
-    font-size: $fs-xs;
-    padding-left: 10vw;
-    & .nav-wrapper {
-        display: flex;
-        flex-direction: row;
-    }
-    & .nav-wrapper__item {
-        margin: 0 2vw;
-    }
-    & .item-link__underline {
-        width: 60%;
-        height: 15%;
-        background-color: $blue;
-        border-radius: 5px;
-        margin: 0.3vw auto;
-        transition: all 0.3s ease-in-out;
-    }
-    & a:hover + div{
-        background: $green;
-    }
-    & img {
-        width: 7vw;
-    }
-    @media screen and (max-width: 375px) {
-        padding-left: 40vw;
-        & .nav-wrapper__item {
-            display: none;
-        }
     }
 }
 
@@ -307,7 +223,10 @@ h4 {
     background-color: $green;
     margin-bottom: 10vw;
     & .button {
-        color: $green;
+        @include button-colors($white, $green);
+        &:hover {
+            border-color: $white;
+        }
     }
     & img {
         top: -2vw;
@@ -328,8 +247,10 @@ h4 {
     text-align: right;
     background-color: $blue;
     & .button {
-        background-color: $white;
-        color: $blue;
+        @include button-colors($white, $blue);
+        &:hover {
+            border-color: $white;
+        }
     }
     & > .card2__text { 
         align-items: flex-end;
@@ -363,12 +284,24 @@ h4 {
     & img {
         width: 20vw;
     }
+    .swiper-button-next,
+    .swiper-button-prev {
+        & > img {
+            width: 50vw;
+        }
+    }
     @media screen and (max-width: 375px) {
         & h3 {
             margin-bottom: 20vw;
         }
         & img {
             width: 30vw;
+        }
+        .swiper-button-next,
+        .swiper-button-prev {
+            & > img {
+                width: 15vw;
+            }
         }
     }
 }
@@ -388,8 +321,6 @@ h4 {
     }
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {display: none;}
 
 .swiper-button-next {
     margin-right: 1vw;
@@ -403,6 +334,8 @@ h4 {
         margin-left: 20vw;
     }
 }
+
+
 
 @media screen and (max-width: 375px) {
     .swiper-button-next,
@@ -428,9 +361,9 @@ h4 {
     }
     & .button {  
         display: block;
-        background-color: $green;
         margin: 5vw auto 0 auto;
         width: fit-content;
+        @include button-colors($white, $green);        
     }
     & h3 {
         text-align: left;
@@ -505,114 +438,3 @@ h4 {
     }
 }
 // === / NEWS  ===
-
-// === FOOTER  ===
-.section-footer {
-    background-color: $blue;
-    padding: 5vw 0 3vw 0;
-    & .section-footer__about {
-        & > * {
-            display: inline-block;
-        }
-        margin-bottom: 5vw;
-    }
-    & h4 { 
-        color: $white;
-    }
-    & .section-footer__text {
-        color: #B0B0B0;
-        font-size: 0.7vw;
-        font-weight: $fw-regular;
-        text-align: center;
-    }
-    @media screen and (max-width: 375px) {
-        padding: 10vw 0 6vw 0;
-        & .section-footer__about {
-            & > * {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-            }
-            margin-bottom: 10vw;
-        }
-        & .section-footer__text {
-            font-size: $fs-l;
-        }
-    }
-}
-
-.section-footer__left-block {
-    margin-right: 15vw;
-    width: 35vw;
-    & img {
-        width: 10vw;
-        padding-bottom: 3vw;
-    }
-    & h4 {
-        font-weight: $fw-regular;
-    }
-    @media screen and (max-width: 375px) {
-        width: fit-content;
-        margin-right: 0;
-        margin-bottom: 5vw;
-        & img {
-            width: 40vw;
-            padding-bottom: 6vw;
-        }
-    }
-}   
-
-.section-footer__right-block {
-    & > * {
-        padding: 1vw;
-    }
-    & .section-footer__phone {
-        display: flex;
-        & img { 
-            width: 2.5vw;
-            padding-right: 1vw;
-        }
-        padding-bottom: 3vw;
-    }
-    & p {
-        font-weight: $fw-regular;
-        font-size: $fs-s;
-    }
-    & .section-footer__social {
-        & img {
-            width: 3vw;
-            padding-right: 1vw;
-        }
-    }
-    & a {
-        font-size: $fs-xs;
-        color: #848CA8;
-        text-decoration: underline;
-    }
-    @media screen and (max-width: 375px) {
-        & > * {
-            padding: 4vw 0 4vw 0;
-        }
-        & .section-footer__phone {
-            display: flex;
-            & img { 
-                width: 10vw;
-                padding-right: 3vw;
-            }
-            padding-bottom: 6vw;
-        }
-        & p {
-            font-size: $fs-s * 4;
-        }
-        & .section-footer__social {
-            & img {
-                width: 14vw;
-                padding-right: 4vw;
-            }
-        }
-        & a {
-            font-size: $fs-xs * 4;
-        }
-    }
-}
-// === / FOOTER  ===
