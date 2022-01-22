@@ -263,9 +263,18 @@ h4 {
   font-size: 1.5vw;
 }
 
+.section-footer__right-block .section-footer__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section-footer__right-block .section-footer__social .social__wrapper {
+  margin-right: 3vw;
+}
+
 .section-footer__right-block .section-footer__social img {
-  width: 3vw;
-  padding-right: 1vw;
+  width: 2.5vw;
 }
 
 .section-footer__right-block a {
@@ -291,9 +300,11 @@ h4 {
   .section-footer__right-block p {
     font-size: 6vw;
   }
+  .section-footer__right-block .section-footer__social .social__wrapper {
+    margin-right: 10vw;
+  }
   .section-footer__right-block .section-footer__social img {
-    width: 14vw;
-    padding-right: 4vw;
+    width: 10vw;
   }
   .section-footer__right-block a {
     font-size: 4vw;

@@ -5,6 +5,10 @@ h1 {
     font-weight: $fw-black;
 }
 
+h4 {
+    color: $green;
+}
+
 @media screen and (max-width: 375px) {
     h1 {font-size: $fs-xl * 1.75;}
     h3 {font-size: $fs-m * 2.5;}
@@ -20,6 +24,8 @@ h1 {
 
 // === HEADING ===
 .section-heading {
+    background-image: url(images/slider/background.png);
+    background-size: cover;
     margin-bottom: 5vw;
     @media screen and (max-width: 375px) {
         margin-bottom: 10vw;
@@ -57,7 +63,12 @@ h1 {
     }
 }
 
+.pagination__item {
+    cursor: pointer;
+}
+
 .pagination__underline {
+    position: relative;
     height: 0.5vw;
     background-color: #D7D7D7;
     border-radius: 5px;
@@ -65,20 +76,28 @@ h1 {
         height: 1.5vw;
     }
 }
+
+.underline_colored {
+    background-color: #5BBCA1;
+    border-radius: inherit;
+    position: absolute;
+    height: 100%;
+    transition: left 0.3s;
+}
+
 // === / PAGINATION ===
 
 // === / DIRECTION PAGE ===
 
 // === main ===
 .section-main-text {
+    background-image: url(images/slider/background.png);
+    background-size: cover;
     margin: 10vw 0;
     .wrapper-inner {
         & > * {
             margin: 5vw 0;
         }
-    }
-    & h4 {
-        color: $green;
     }
     & p {
         font-weight: $fw-regular;
@@ -97,6 +116,8 @@ h1 {
 
 // === slider ===
 .slider {
+    background-image: url(images/slider/background.png);
+    background-size: cover;
     position: relative;
     text-align: center;
     margin-bottom: 10vw;
@@ -148,6 +169,11 @@ h1 {
 .swiper-pagination-bullet {
     width: 0.7vw !important; 
     height: 0.7vw !important; 
+    @media screen and (max-width: 375px) {
+        width: 1.4vw !important; 
+        height: 1.4vw !important; 
+        margin: 2vw !important;
+    }
 }
 
 .swiper-pagination-bullet-active {
@@ -157,6 +183,8 @@ h1 {
 
 // === lessons ===
 .section-lessons {
+    background-image: url(images/team/background.png);
+    background-size: cover;
     margin-bottom: 10vw;
     @media screen and (max-width: 375px) {
         margin-bottom: 20vw;
@@ -169,7 +197,7 @@ h1 {
         margin-left: 20vw;
     }
     @media screen and (max-width: 375px) {
-        margin-bottom: 15vw;
+        margin-bottom: 10vw;
         & .heading__second {
             margin-left: 30vw;
         }
@@ -181,6 +209,7 @@ h1 {
     justify-content: space-between;
     & .lessons-list__image-wrapper > img {
         width: 30vw;
+        height: 100%;
     }
     @media screen and (max-width: 375px) {
         flex-direction: column;
@@ -194,6 +223,9 @@ h1 {
     display: grid;
     grid-template: repeat(3, 1/3fr) / 1fr; 
     grid-row-gap: 3vw;
+    @media screen and (max-width: 375px) {
+        display: block;
+    }
 }
 
 .lessons-list__item {
@@ -219,12 +251,35 @@ h1 {
             font-weight: $fw-regular;
         }
     }
+    @media screen and (max-width: 375px) {
+        width: auto;
+        height: fit-content;
+        padding: 6vw;
+        margin: 5vw 0;
+        & img {
+            width: 14vw;
+        }
+        .item__text {
+            width: 56vw;
+            & h3 {
+                margin-bottom: 4vw;
+            }
+            & p {
+                font-size: $fs-xs * 4.6;
+            }
+        }
+    }
 }
 // === / lessons ===
 
 // === team ===
 .section-team {
+    background-image: url(images/team/background.png);
+    background-size: cover;
     margin-bottom: 10vw;
+    @media screen and (max-width: 375px) {
+        margin-bottom: 20vw;
+    }
 }
 
 .section-team__heading {
@@ -232,10 +287,21 @@ h1 {
     .heading__second {
         margin-left: 10vw;
     }
+    @media screen and (max-width: 375px) {
+        margin-bottom: 10vw;
+        .heading__second {
+            margin-left: 20vw;
+        }
+    }
 }
 
 .team-list {
+    position: relative;
     margin-left: 5vw;
+    @media screen and (max-width: 375px) {
+        margin: 0;
+        margin-top: 15vw;
+    }
 }
 
 .team-list__item {
@@ -246,6 +312,7 @@ h1 {
         align-self: flex-start;
         margin-right: 5vw;
         width: 5vw;
+        z-index: 1;
     }
     .item__text {
         & h3 {
@@ -258,6 +325,21 @@ h1 {
             font-weight: $fw-regular;
         }
     }
+    @media screen and (max-width: 375px) {
+        margin: 10vw 0;
+        & img {
+            margin-right: 3vw;
+            width: 15vw;
+        }
+        .item__text {
+            & h3 {
+                margin-bottom: 4vw;
+            }
+            & p {
+                font-size: $fs-xs * 4.6;
+            }
+        }
+    }
 }
 
 .section-team__buttons {
@@ -267,11 +349,27 @@ h1 {
     & > .button {
         @include button-colors($white, $green);
     }
+    @media screen and (max-width: 375px) {
+        flex-direction: column;
+        & > .button {
+            margin: 3vw 0;
+        }
+    }
+}
+
+.connecting-line {
+    position: absolute;
+    z-index: 0;
+    height: 75%;
+    left: 7vw;
+    top: 10vw;
 }
 // === / team ===
 
 // === player ===
 .section-player {
+    background-image: url(images/team/background.png);
+    background-size: cover;
     text-align: center;
     & iframe {
         width: 50vw;
@@ -280,6 +378,15 @@ h1 {
     & .player-wrapper {
         margin-bottom: 5vw;
     }
+    @media screen and (max-width: 375px) {
+        & iframe {
+            width: 90vw;
+            height: 60vw;
+        }
+        & .player-wrapper {
+            margin-bottom: 20vw;
+        }
+    }
 }
 // === / player ===
 
@@ -287,8 +394,51 @@ h1 {
 
 
 // === TEAMS PAGE ===
+.teams-content {
+    margin: 10vw 0;
+    & .section-list h3 {
+        text-align: center;
+        margin-bottom: 10vw;
+    }
+    & .partners-slider {
+        & > * > * > * > img {
+            width: 20vw;
+        }
+    }
+    & .partners-slider__image {
+        margin-left: 8vw;
+    }
+    & .swiper-button-next {
+        margin-right: 1vw;
+        @media screen and (max-width: 375px) {
+            margin-right: 20vw;
+        }
+    } 
+    & .swiper-button-prev {
+        margin-left: 1vw;
+        @media screen and (max-width: 375px) {
+            margin-left: 20vw;
+        }
+    }
+}
+
+
 // === / TEAMS PAGE ===
 
 
 // === MATERIALS PAGE ===
+.section-availableness {
+    background-image: url(images/team/background.png);
+    background-size: cover;
+    margin-bottom: 10vw;
+    & .button {
+        @include button-colors($white, $green);
+        margin: 5vw auto 0 auto;
+    }
+    @media screen and (max-width: 375px) {
+        & .button {
+            margin-top: 15vw;
+        }
+    }
+}
 // === / MATERIALS PAGE ===

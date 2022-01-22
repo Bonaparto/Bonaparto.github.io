@@ -33,12 +33,12 @@ h4 {
         z-index: 1;
         bottom: 2vw;
         right: 5vw;
-        & > img {
-            width: 5vw;
+        & img {
+            width: 4vw;
         }
         @media screen and (max-width: 375px) {
-            & > img {
-                width: 20vw;
+            & img {
+                width: 16vw;
             }
         }
     }
@@ -90,6 +90,12 @@ h4 {
             text-align: center;
             width: 70vw;
         }
+    }
+}
+
+.hero-image__button {
+    & .button {
+        @include button-colors($white, $blue);
     }
 }
 // === / HERO-IMAGE === 
@@ -224,9 +230,6 @@ h4 {
     margin-bottom: 10vw;
     & .button {
         @include button-colors($white, $green);
-        &:hover {
-            border-color: $white;
-        }
     }
     & img {
         top: -2vw;
@@ -248,9 +251,6 @@ h4 {
     background-color: $blue;
     & .button {
         @include button-colors($white, $blue);
-        &:hover {
-            border-color: $white;
-        }
     }
     & > .card2__text { 
         align-items: flex-end;

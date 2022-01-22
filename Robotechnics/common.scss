@@ -26,6 +26,7 @@
     &:hover {
         background-color: $c;
         color: $bgc;
+        border: 3px solid $white; 
     }
 }
 // === / Mixins ===
@@ -233,9 +234,12 @@ h4 {font-size: $fs-s;}
         font-size: $fs-s;
     }
     & .section-footer__social {
+        display: flex;
+        & .social__wrapper {
+            margin-right: 3vw;
+        }
         & img {
-            width: 3vw;
-            padding-right: 1vw;
+            width: 2.5vw;
         }
     }
     & a {
@@ -259,9 +263,11 @@ h4 {font-size: $fs-s;}
             font-size: $fs-s * 4;
         }
         & .section-footer__social {
+            & .social__wrapper {
+                margin-right: 10vw;
+            }
             & img {
-                width: 14vw;
-                padding-right: 4vw;
+                width: 10vw;
             }
         }
         & a {

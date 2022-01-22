@@ -263,9 +263,18 @@ h4 {
   font-size: 1.5vw;
 }
 
+.section-footer__right-block .section-footer__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section-footer__right-block .section-footer__social .social__wrapper {
+  margin-right: 3vw;
+}
+
 .section-footer__right-block .section-footer__social img {
-  width: 3vw;
-  padding-right: 1vw;
+  width: 2.5vw;
 }
 
 .section-footer__right-block a {
@@ -291,9 +300,11 @@ h4 {
   .section-footer__right-block p {
     font-size: 6vw;
   }
+  .section-footer__right-block .section-footer__social .social__wrapper {
+    margin-right: 10vw;
+  }
   .section-footer__right-block .section-footer__social img {
-    width: 14vw;
-    padding-right: 4vw;
+    width: 10vw;
   }
   .section-footer__right-block a {
     font-size: 4vw;
@@ -342,13 +353,13 @@ h4 {
   right: 5vw;
 }
 
-.section-hero-image .hero-image__contact > img {
-  width: 5vw;
+.section-hero-image .hero-image__contact img {
+  width: 4vw;
 }
 
 @media screen and (max-width: 375px) {
-  .section-hero-image .hero-image__contact > img {
-    width: 20vw;
+  .section-hero-image .hero-image__contact img {
+    width: 16vw;
   }
 }
 
@@ -420,6 +431,18 @@ h4 {
     text-align: center;
     width: 70vw;
   }
+}
+
+.hero-image__button .button {
+  background-color: #FFFFFF;
+  color: #304B7A;
+  border: 3px solid #304B7A;
+}
+
+.hero-image__button .button:hover {
+  background-color: #304B7A;
+  color: #FFFFFF;
+  border: 3px solid #FFFFFF;
 }
 
 .section-registration {
@@ -585,10 +608,7 @@ h4 {
 .card1 .button:hover {
   background-color: #5BBCA1;
   color: #FFFFFF;
-}
-
-.card1 .button:hover {
-  border-color: #FFFFFF;
+  border: 3px solid #FFFFFF;
 }
 
 .card1 img {
@@ -620,10 +640,7 @@ h4 {
 .card2 .button:hover {
   background-color: #304B7A;
   color: #FFFFFF;
-}
-
-.card2 .button:hover {
-  border-color: #FFFFFF;
+  border: 3px solid #FFFFFF;
 }
 
 .card2 > .card2__text {
@@ -763,6 +780,7 @@ h4 {
 .section-news .button:hover {
   background-color: #5BBCA1;
   color: #FFFFFF;
+  border: 3px solid #FFFFFF;
 }
 
 .section-news h3 {
