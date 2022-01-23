@@ -6,8 +6,7 @@ let directionContent = document.querySelector('.direction-content');
 let teamsContent = document.querySelector('.teams-content');
 let materialsContent = document.querySelector('.materials-content');
 
-directionContent.style.display = "none";
-// teamsContent.style.display = "none";
+teamsContent.style.display = "none";
 materialsContent.style.display = "none";
 
 paginationNames[0].style.color = "#5BBCA1";
@@ -40,13 +39,3 @@ paginationNames.forEach((name) => {
         });
     });
 });
-
-// console.log(paginationNames[0]);
-// console.log(paginationNames[1]);
-// console.log(paginationNames[2]);
-// console.log(paginationUnderline);
-
-// console.log(ceil);
-// console.log(directionContent);
-// console.log(teamsContent);
-// console.log(materialsContent);

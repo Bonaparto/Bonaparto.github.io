@@ -460,54 +460,54 @@ h4 {
   }
 }
 
-.swiper-button-next > img,
-.swiper-button-prev > img {
+.image-slider .swiper-button-next > img,
+.image-slider .swiper-button-prev > img {
   width: 50vw;
 }
 
 @media screen and (max-width: 375px) {
-  .swiper-button-next > img,
-  .swiper-button-prev > img {
+  .image-slider .swiper-button-next > img,
+  .image-slider .swiper-button-prev > img {
     position: absolute;
     top: 25vw !important;
     width: 15vw;
   }
 }
 
-.swiper-button-next {
+.image-slider .swiper-button-next {
   margin-right: 5vw;
 }
 
 @media screen and (max-width: 375px) {
-  .swiper-button-next {
+  .image-slider .swiper-button-next {
     margin-right: 20vw;
   }
 }
 
-.swiper-button-prev {
+.image-slider .swiper-button-prev {
   margin-left: 5vw;
 }
 
 @media screen and (max-width: 375px) {
-  .swiper-button-prev {
+  .image-slider .swiper-button-prev {
     margin-left: 20vw;
   }
 }
 
-.swiper-pagination-bullet {
+.image-slider .swiper-pagination-bullet {
   width: 0.7vw !important;
   height: 0.7vw !important;
 }
 
 @media screen and (max-width: 375px) {
-  .swiper-pagination-bullet {
+  .image-slider .swiper-pagination-bullet {
     width: 1.4vw !important;
     height: 1.4vw !important;
     margin: 2vw !important;
   }
 }
 
-.swiper-pagination-bullet-active {
+.image-slider .swiper-pagination-bullet-active {
   background-color: #5BBCA1 !important;
 }
 
@@ -795,8 +795,9 @@ h4 {
   }
 }
 
-.teams-content {
-  margin: 10vw 0;
+.teams-content .section-list {
+  background-image: url(images/team/background.png);
+  background-size: cover;
 }
 
 .teams-content .section-list h3 {
@@ -804,12 +805,30 @@ h4 {
   margin-bottom: 10vw;
 }
 
+.teams-content .partners-slider {
+  position: relative;
+  margin-bottom: 10vw;
+}
+
 .teams-content .partners-slider > * > * > * > img {
   width: 20vw;
 }
 
+@media screen and (max-width: 375px) {
+  .teams-content .partners-slider > * > * > * > img {
+    width: 30vw;
+    padding-bottom: 30vw;
+  }
+}
+
 .teams-content .partners-slider__image {
-  margin-left: 8vw;
+  margin-left: 9vw;
+}
+
+@media screen and (max-width: 375px) {
+  .teams-content .partners-slider__image {
+    margin-left: 8vw;
+  }
 }
 
 .teams-content .swiper-button-next {
@@ -829,6 +848,17 @@ h4 {
 @media screen and (max-width: 375px) {
   .teams-content .swiper-button-prev {
     margin-left: 20vw;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .teams-content .swiper-button-next,
+  .teams-content .swiper-button-prev {
+    margin-top: 15vw;
+  }
+  .teams-content .swiper-button-next > img,
+  .teams-content .swiper-button-prev > img {
+    width: 15vw;
   }
 }
 

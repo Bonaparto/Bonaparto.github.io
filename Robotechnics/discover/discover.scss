@@ -136,48 +136,47 @@ h4 {
             border-radius: 30px;
         }
     }
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    & > img {
-        width: 50vw;
-    }
-    @media screen and (max-width: 375px) {
+    .swiper-button-next,
+    .swiper-button-prev {
         & > img {
-            position: absolute;
-            top: 25vw !important;
-            width: 15vw;
-        }        
+            width: 50vw;
+        }
+        @media screen and (max-width: 375px) {
+            & > img {
+                position: absolute;
+                top: 25vw !important;
+                width: 15vw;
+            }        
+        }
     }
-}
-
-.swiper-button-next {
-    margin-right: 5vw;
-    @media screen and (max-width: 375px) {
-        margin-right: 20vw;
+    
+    .swiper-button-next {
+        margin-right: 5vw;
+        @media screen and (max-width: 375px) {
+            margin-right: 20vw;
+        }
     }
-}
-
-.swiper-button-prev {
-    margin-left: 5vw;
-    @media screen and (max-width: 375px) {
-        margin-left: 20vw;
+    
+    .swiper-button-prev {
+        margin-left: 5vw;
+        @media screen and (max-width: 375px) {
+            margin-left: 20vw;
+        }
     }
-}
-
-.swiper-pagination-bullet {
-    width: 0.7vw !important; 
-    height: 0.7vw !important; 
-    @media screen and (max-width: 375px) {
-        width: 1.4vw !important; 
-        height: 1.4vw !important; 
-        margin: 2vw !important;
+    
+    .swiper-pagination-bullet {
+        width: 0.7vw !important; 
+        height: 0.7vw !important; 
+        @media screen and (max-width: 375px) {
+            width: 1.4vw !important; 
+            height: 1.4vw !important; 
+            margin: 2vw !important;
+        }
     }
-}
-
-.swiper-pagination-bullet-active {
-    background-color: $green !important;
+    
+    .swiper-pagination-bullet-active {
+        background-color: $green !important;
+    }
 }
 // === / slider ===
 
@@ -395,18 +394,31 @@ h4 {
 
 // === TEAMS PAGE ===
 .teams-content {
-    margin: 10vw 0;
-    & .section-list h3 {
-        text-align: center;
-        margin-bottom: 10vw;
+    & .section-list {
+        
+        background-image: url(images/team/background.png);
+        background-size: cover;
+        & h3 {
+            text-align: center;
+            margin-bottom: 10vw;
+        }
     }
     & .partners-slider {
+        position: relative;
+        margin-bottom: 10vw;
         & > * > * > * > img {
             width: 20vw;
+            @media screen and(max-width: 375px) {
+                width: 30vw;
+                padding-bottom: 30vw;
+            }
         }
     }
     & .partners-slider__image {
-        margin-left: 8vw;
+        margin-left: 9vw;
+        @media screen and(max-width: 375px) {
+            margin-left: 8vw;
+        }
     }
     & .swiper-button-next {
         margin-right: 1vw;
@@ -420,9 +432,16 @@ h4 {
             margin-left: 20vw;
         }
     }
+    @media screen and (max-width: 375px) {
+        .swiper-button-next,
+        .swiper-button-prev {
+            margin-top: 15vw;
+            & > img {
+                width: 15vw;
+            }
+        }
+    }
 }
-
-
 // === / TEAMS PAGE ===
 
 
