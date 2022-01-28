@@ -11,18 +11,20 @@
         <div id="todo">
             <h1>My To Do List</h1>
             <div class="search">
-                <input type="text" placeholder="Title..." v-model="name">
+                <input type="text" :placeholder="placeholder" v-model="name">
                 <button @click="pushInTodo">Add</button>
             </div>
             <!-- <div class="">
                 <span>{{ todosInLine }}</span>
             </div> -->
             <ul>
-                <todo-item
+                <todo-item ref='todoitem'
                 v-for="(item, index) in todos"
-                :class="[todoClass, (index % 2 == 0 ? whiteClass : grayClass)]"
+                :class="[todoClass, (index % 2 == 0 ? 'white' : 'gray')]"
+                :style="[ getBorder(index) == '2px solid red' ? { border: getBorder(index) } : { border: getBorder(index) } ]"
                 :todo="item"
                 @remove="removeFromTodo(index)"
+                @edit="editTodo(index)"
                 >
                 </todo-item>
             </ul>
@@ -32,32 +34,46 @@
             Vue.component('todo-item', {
                 props: ['todo'],
                 template: `
-                <li @click='markClass.marked = !markClass.marked' 
-                :class="[markClass]">
-                    <div>
+                <li @click='markClass.marked = !markClass.marked && !todo.isEditing' 
+                @mouseover='hoveredClass.hovered = true && !markClass.marked'
+                @mouseleave='hoveredClass.hovered = false'
+                :class="[markClass, hoveredClass]">
+                    <div class="tick-and-name">
                         <img src="tick.png" v-show="markClass.marked">
-                        <span>{{ todo }}</span>
+                        <span v-if="!todo.isEditing" v-text='todo.title'></span>
+                        <input v-model='todo.title' v-else/>
                     </div>
-                    <div @click="$emit('remove')">
+                    <div @click="todo.isEditing=!todo.isEditing, $event.stopPropagation()" class="edit">
+                        <button>
+                            {{ todo.isEditing ? "Confirm" : 'Edit' }}
+                        </button>    
+                    </div>
+                    <div @click="$emit('remove')" class="remove">
                         <button>
                             <img src="close.png">
-                        </button>
+                        </button>    
                     </div>
                 </li>`,
                 data: function() {
                     return { 
                         markClass: {
                             marked: false,
-                        }
+                        },
+                        hoveredClass: {
+                            hovered: false,
+                        },
+                        editing: false,
                     }
                 },
             })
-            
             var app = new Vue({
                 el: '#todo',
                 data: {
                     isMarked: false,
-                    todos: ['Notice me, senpai'],
+                    todos: [
+                        {title: 'Notice me, senpai',
+                        isEditing: false},
+                    ],
                     todoClass: {
                         todo: true,
                     },
@@ -68,14 +84,22 @@
                         gray: true,
                     },
                     markedClass: {
-                        done: true,
+                        marked: true,
                     },
                     name: '',
+                    name1: '',
                 },
                 methods: {
+                    getBorder(index){
+                        if(index % 2 == 0) return '2px solid red'
+                        else return '2px solid lightblue'
+                    },
                     pushInTodo() {
                         if(this.name !== '') {
-                            this.todos.push(this.name);
+                            this.todos.push({
+                                title: this.name,
+                                isEditing: false
+                            });
                             this.name = '';
                         } else {
                             alert('Write something first.');
@@ -84,12 +108,11 @@
                     removeFromTodo(index) {
                         this.todos.splice(index, 1);
                     },
-                    markDone(item) {
-                        item.markedClass.done = true;
-                        console.log(item);
-                    },
                 },
                 computed: {
+                    placeholder() {
+                        // return this.$refs.todoitem.editing ? 'Title...' : 'Write here';
+                    }
                     // todosInLine() {
                     //     return this.todos.join(' ').split(' ')
                     // }

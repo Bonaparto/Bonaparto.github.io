@@ -46,38 +46,41 @@
 }
 
 .todo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-size: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 100px 50px;
+      grid-template-columns: 1fr 100px 50px;
+  text-align: left;
   margin: 0 auto;
   width: 41.2%;
 }
 
-.todo div {
+.todo .remove {
   padding: 1vw;
 }
 
-.todo div + div:hover {
+.todo .remove:hover {
   background-color: red;
 }
 
-.todo div + div:hover * {
+.todo .remove:hover * {
   background-color: red;
 }
 
-.todo:hover {
-  background-color: gray;
+.todo .edit {
+  padding: 1vw;
 }
 
-.todo:hover * {
-  background-color: gray;
+.todo .edit button {
+  font-size: 20px;
+}
+
+.todo .edit:hover {
+  background-color: yellow;
+}
+
+.todo .edit:hover * {
+  background-color: yellow;
 }
 
 .todo img {
@@ -85,7 +88,38 @@
 }
 
 .todo span {
-  margin-left: 15px;
+  font-size: 20px;
+  margin: 50px;
+}
+
+.edit button {
+  font-size: 20px;
+}
+
+.tick-and-name {
+  position: relative;
+  padding-top: 18px;
+}
+
+.tick-and-name img {
+  position: absolute;
+  left: 15px;
+  top: 20px;
+}
+
+.tick-and-name input {
+  font-size: 20px;
+  margin-left: 50px;
+  font-weight: 200;
+  border: 2px solid black;
+}
+
+.hovered:hover {
+  background-color: gray;
+}
+
+.hovered:hover * {
+  background-color: gray;
 }
 
 .gray {
@@ -100,11 +134,15 @@
   background-color: white;
 }
 
-.done {
-  background-color: gray;
+.marked {
+  background-color: green;
 }
 
-.marked > img {
+.marked * {
+  background-color: green;
+}
+
+.marked span {
   text-decoration: line-through;
 }
 /*# sourceMappingURL=toDo.css.map */
