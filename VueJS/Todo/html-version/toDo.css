@@ -56,7 +56,7 @@
 }
 
 .todo .remove {
-  padding: 1vw;
+  padding: 1.1vw 1vw 1vw 1vw;
 }
 
 .todo .remove:hover {
@@ -90,6 +90,12 @@
 .todo span {
   font-size: 20px;
   margin: 50px;
+}
+
+.edit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .edit button {
