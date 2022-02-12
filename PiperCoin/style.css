@@ -1,0 +1,144 @@
+body {
+  background-color: black;
+}
+
+.fixed {
+  box-sizing: border-box;
+  max-width: 1219px;
+  width: 70%;
+  padding: 0px 55px;
+  margin: 0px auto;
+}
+
+.head {
+  position: sticky;
+  background-color: #007765;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 27px 0px;
+  text-align: right;
+}
+
+.textcommon {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.text {
+  font-size: 24px;
+  text-align: right;
+  padding-right: 75px;
+  color: white;
+}
+
+.img {
+  position: absolute;
+  left: 65px;
+  top: 20px;
+  height: 45px;
+}
+
+.background {
+  background: url("images/pafosbackground.png");
+  background-size: cover;
+  background-position: center;
+  padding: 160px 0px;
+}
+
+.text1 {
+  text-align: center;
+  font-size: 72px;
+  color: #eeeeee;
+}
+
+.problemblock {
+  background-color: #eeeeee;
+  text-align: left;
+  font-size: 32px;
+  padding: 40px 30px 80px 30px;
+}
+
+.p1 {
+  margin-top: 0px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #007765;
+  font-weight: 600;
+  font-size: 64px;
+}
+
+.heroblock {
+  background-image: url(images/heroblock.png);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+  font-style: italic;
+  color: white;
+  padding: 130px 100px;
+  line-height: 56px;
+}
+
+.coinblock {
+  background-color: #ffffff;
+  font-size: 32px;
+  padding: 40px 60px 80px 60px;
+}
+
+.img2 {
+  padding: 0px 45px 25px 10px;
+  float: left;
+  height: 120px;
+}
+
+.heading1 {
+  font-size: 48px;
+}
+
+.heading2 {
+  font-weight: 600;
+}
+
+.team {
+  background-color: #eeeeee;
+}
+
+.team figure {
+  margin: 0px;
+  height: 165px;
+  width: 165px;
+  padding: 10px 100px 150px 100px;
+  display: inline-block;
+  text-align: center;
+}
+
+.team img {
+  height: 175px;
+}
+
+figure > figcaption {
+  color: #007765;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 5px 0px 5px 0px;
+  line-height: 22px;
+}
+
+figcaption + figcaption {
+  color: black;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.end {
+  background-color: #333333;
+  padding: 100px 350px;
+}
+
+.text2 {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
