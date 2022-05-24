@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { QueryClient, useQuery, QueryClientProvider} from 'react-query'
 import { VacancyService } from './services/vacancy.service';
 import { Vacancy } from './interfaces/Vacancy';
