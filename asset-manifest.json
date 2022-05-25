@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/1fit-test-task/static/css/main.88dd18e6.css",
+    "main.js": "/1fit-test-task/static/js/main.e374f8e5.js",
+    "static/js/787.d30d6b2c.chunk.js": "/1fit-test-task/static/js/787.d30d6b2c.chunk.js",
+    "static/media/Spartan-Medium.ttf": "/1fit-test-task/static/media/Spartan-Medium.a1134e630ced5e21dd92.ttf",
+    "static/media/Spartan-Bold.ttf": "/1fit-test-task/static/media/Spartan-Bold.386419b2a5c9d587e458.ttf",
+    "static/media/loop-studios.svg": "/1fit-test-task/static/media/loop-studios.7778c957c5751d1502cc.svg",
+    "static/media/photosnap.svg": "/1fit-test-task/static/media/photosnap.5a867c13a374d62b400f.svg",
+    "static/media/manage.svg": "/1fit-test-task/static/media/manage.5a528a9669728fb94c8c.svg",
+    "static/media/insure.svg": "/1fit-test-task/static/media/insure.4d535e7e02c25d02b163.svg",
+    "static/media/account.svg": "/1fit-test-task/static/media/account.903d6cd02abadf4b4d60.svg",
+    "static/media/eyecam-co.svg": "/1fit-test-task/static/media/eyecam-co.0abb14e8a292eed471d5.svg",
+    "static/media/shortly.svg": "/1fit-test-task/static/media/shortly.3c01b577742e2648f6f9.svg",
+    "static/media/myhome.svg": "/1fit-test-task/static/media/myhome.aaaaa430346f24f652d5.svg",
+    "static/media/the-air-filter-company.svg": "/1fit-test-task/static/media/the-air-filter-company.9b55f6443c39f7b79348.svg",
+    "static/media/faceit.svg": "/1fit-test-task/static/media/faceit.54a148ce9e8793ff767e.svg",
+    "static/media/bg-header-desktop.svg": "/1fit-test-task/static/media/bg-header-desktop.8694f4668c94cdc9d16e.svg",
+    "index.html": "/1fit-test-task/index.html",
+    "main.88dd18e6.css.map": "/1fit-test-task/static/css/main.88dd18e6.css.map",
+    "main.e374f8e5.js.map": "/1fit-test-task/static/js/main.e374f8e5.js.map",
+    "787.d30d6b2c.chunk.js.map": "/1fit-test-task/static/js/787.d30d6b2c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.88dd18e6.css",
+    "static/js/main.e374f8e5.js"
+  ]
+}
