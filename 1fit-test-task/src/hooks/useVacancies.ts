@@ -4,18 +4,16 @@ import { VacancyService } from '../services/vacancy.service'
 
 export const useVacancies = () => {
   
-  const {data: vacancies} = useQuery(
+  const {data: vacancies, isLoading} = useQuery(
     'vacanciesList', 
-    () => VacancyService.getVacanciesList(),
+    async () => VacancyService.getVacanciesList(),
     {
-      onSuccess: ({ data }) => {
-        return data
-      },
+      onSuccess: ({ data }) => data,
       onError: ({ error }) => {
         alert(error.message)
       }
     }
   )
 
-  return vacancies?.data
+  return {vacancies, isLoading}
 }

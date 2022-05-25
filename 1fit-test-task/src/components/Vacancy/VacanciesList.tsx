@@ -1,14 +1,18 @@
 import VacancyItem from './VacancyItem';
 import { Vacancy } from '../../interfaces/Vacancy';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useVacancies } from '../../hooks/useVacancies';
 
 export default function VacanciesList() {
 
-  const vacancies: Vacancy[] | undefined = useVacancies()
+  const { vacancies, isLoading } = useVacancies() 
 
-  const [vacanciesList, setVacanciesList] = useState<Vacancy[] | undefined>(vacancies)
+  const [vacanciesList, setVacanciesList] = useState<Vacancy[] | undefined>([])
 
+  useEffect(() => {
+    setVacanciesList(vacancies?.data)
+  }, [isLoading])
+  
   return (
     <article>
       {vacanciesList?.length ? (

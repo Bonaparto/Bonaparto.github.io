@@ -7,6 +7,6 @@ axios.defaults.baseURL = baseURL
 
 export const VacancyService = {
   async getVacanciesList() {
-    return axios.get<Vacancy[]>('/vacancies')
+    return await axios.get<Vacancy[]>('/vacancies')
   }
 }
