@@ -2,20 +2,37 @@
 @import 'assets/style/abstracts/functions';
 @import 'assets/style/abstracts/mixins';
 @import 'assets/style/abstracts/variables';
+@import 'assets/style/components/vacancyList.scss';
 @import 'assets/style/components/vacancyItem.scss';
+
+@font-face {
+  font-family: 'Spartan';
+  font-weight: bold;
+  src: local('Spartan'), url('./assets/fonts/Spartan-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Spartan';
+  font-weight: medium;
+  src: local('Spartan'), url('./assets/fonts/Spartan-Medium.ttf') format('truetype');
+}
+
+body, html {
+  font-family: 'Spartan';
+}
 
 .app {
   height: 100vh;
 }
 
 .header {
-  width: 100vw;
   height: 156px;
   background-image: url('./assets/images/backgrounds/bg-header-desktop.svg');
   background-color: $tealPrimary;
 }
 
 .main {
-  height: 100%;
+  min-height: calc(100% - 156px);
   background-color: $tealBackground;
+  padding-block: 41px 120px;
 }
