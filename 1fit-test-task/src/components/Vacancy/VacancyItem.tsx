@@ -26,8 +26,6 @@ export default function VacancyItem(props: {vacancy : Vacancy}) {
     }))
   }
 
-  console.log('skillList', skillList);
-
   return (
     <li className="vacancy-item">
       <div className="vacancy-item__logo-and-info">

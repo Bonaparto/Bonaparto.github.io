@@ -1,26 +1,13 @@
-import React from 'react'
 import VacancyItem from './VacancyItem';
-import { useQuery } from 'react-query'
-import { VacancyService } from '../../services/vacancy.service'
 import { Vacancy } from '../../interfaces/Vacancy';
 import { useState } from 'react';
+import { useVacancies } from '../../hooks/useVacancies';
 
 export default function VacanciesList() {
 
-  const [vacanciesList, setVacanciesList] = useState<Vacancy[]>([])
+  const vacancies: Vacancy[] | undefined = useVacancies()
 
-  const {} = useQuery(
-    'vacanciesList', 
-    () => VacancyService.getVacanciesList(),
-    {
-      onSuccess: ({ data }) => {
-        setVacanciesList(data)
-      },
-      onError: ({ error }) => {
-        alert(error.message)
-      }
-    }
-  )
+  const [vacanciesList, setVacanciesList] = useState<Vacancy[] | undefined>(vacancies)
 
   return (
     <article>
