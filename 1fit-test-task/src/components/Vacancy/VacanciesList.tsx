@@ -1,21 +1,13 @@
-import VacancyItem from './VacancyItem';
-import { Vacancy } from '../../interfaces/Vacancy';
-import { useEffect, useState } from 'react';
 import { useVacancies } from '../../hooks/useVacancies';
+import { Vacancy } from '../../interfaces/Vacancy';
+import VacancyItem from './VacancyItem';
 
 export default function VacanciesList() {
+  const { vacanciesList } = useVacancies();
 
-  const { vacancies, isLoading } = useVacancies() 
-
-  const [vacanciesList, setVacanciesList] = useState<Vacancy[] | undefined>([])
-
-  useEffect(() => {
-    setVacanciesList(vacancies?.data)
-  }, [isLoading])
-  
   return (
     <article>
-      {vacanciesList?.length ? (
+      {vacanciesList ? (
         <ul className="vacancy-list">
           {vacanciesList.map((vacancy : Vacancy) => (
             <VacancyItem vacancy={vacancy} key={vacancy.id}/>

@@ -1,7 +1,6 @@
 import { useQuery } from 'react-query'
 import { VacancyService } from '../services/vacancy.service'
 
-
 export const useVacancies = () => {
   
   const {data: vacancies, isLoading} = useQuery(
@@ -10,10 +9,10 @@ export const useVacancies = () => {
     {
       onSuccess: ({ data }) => data,
       onError: ({ error }) => {
-        alert(error.message)
+        alert(error.message);
       }
     }
   )
 
-  return {vacancies, isLoading}
+  return { vacanciesList: vacancies?.data, isLoading};
 }

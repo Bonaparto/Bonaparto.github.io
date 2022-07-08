@@ -1,19 +1,26 @@
 import * as React from 'react';
-import { SkillContextType, Skill } from '../interfaces/Skill';
+import { Skill } from '../interfaces/Skill';
 
-export const SkillContext = React.createContext<SkillContextType | null>(null);
+type Props = React.PropsWithChildren<any>;
 
-const SkillProvider: React.FC<React.ReactNode> = () => {
-  const [skills, setSkills] = React.useState<Skill[]>([]);
-  const addSkill = (Skill: Skill) => {
-    setSkills([...skills, Skill]);
-    return skills
-  };
-  const removeSkill = (id: number) => {
-    skills.filter((Skill: Skill) => Skill.id !== id);
-    return skills
-  };
-  return <SkillContext.Provider value={{ skills, addSkill, removeSkill }}></SkillContext.Provider>;
+export const SkillContext = React.createContext({
+  skills: [] as Skill[] | undefined,
+  updateSkills: (skill: Skill) => [] as Skill[],
+});
+
+export const SkillContextProvider = (props: Props) => {
+  const [state, setState] = React.useState<Skill[]>([]);
+
+  const updateSkills = (skill: Skill) => {
+    if (skill.isActive) {
+      setState((prev: Skill[]) => {
+        if (prev.find((prevSkill: Skill) => prevSkill.name === skill.name) === undefined) {
+          return [...prev, skill];
+        } else return prev;
+      });
+    } else setState((prev: Skill[]) => prev.filter((prevSkill: Skill) => prevSkill.name != skill.name))
+    return state;
+  }
+
+  return (<SkillContext.Provider value={{ skills: state, updateSkills }}>{props.children}</SkillContext.Provider>)
 };
-
-export default SkillProvider;

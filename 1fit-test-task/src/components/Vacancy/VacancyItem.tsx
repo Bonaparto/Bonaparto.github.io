@@ -1,30 +1,37 @@
+import { useState, useContext } from "react";
+import { SkillContext } from "../../context/context";
 import { Vacancy } from "../../interfaces/Vacancy";
 import { Skill } from "../../interfaces/Skill";
-import { useState } from "react";
 
-export default function VacancyItem(props: {vacancy : Vacancy}) {
-  const vacancy: Vacancy = props.vacancy
+type Props = {
+  vacancy: Vacancy;
+}
+
+export default function VacancyItem({ vacancy }: Props) {
+  const context = useContext(SkillContext);
+
   let skillNames: string[] = [
     vacancy.role, 
     vacancy.level,
     ...vacancy.languages,
     ...vacancy.tools
-  ]
+  ];
 
   let [skillList, setSkillList] = useState(skillNames.map((skillName, index) => ({
     id: index,
     name: skillName,
     isActive: false
-  })))
+  })));
 
-  function toggleState(skillId: number) {
+  const toggleState = (skillId: number) => {
     setSkillList(skillList.map(skill => {
       if (skill.id === skillId) {
-        skill.isActive = !skill.isActive
+        skill.isActive = !skill.isActive;
+        context.updateSkills(skill);
       }
-      return skill
+      return skill;
     }))
-  }
+  };
 
   return (
     <li className="vacancy-item">
