@@ -1,11 +1,12 @@
-import * as React from 'react';
-import { Skill } from '../interfaces/Skill';
+import * as React from "react";
+import { Skill } from "../interfaces/Skill";
 
 type Props = React.PropsWithChildren<any>;
 
 export const SkillContext = React.createContext({
   skills: [] as Skill[] | undefined,
   updateSkills: (skill: Skill) => [] as Skill[],
+  clearSkills: () => [] as Skill[],
 });
 
 export const SkillContextProvider = (props: Props) => {
@@ -14,13 +15,32 @@ export const SkillContextProvider = (props: Props) => {
   const updateSkills = (skill: Skill) => {
     if (skill.isActive) {
       setState((prev: Skill[]) => {
-        if (prev.find((prevSkill: Skill) => prevSkill.name === skill.name) === undefined) {
+        if (!isSkillInList(prev, skill)) {
           return [...prev, skill];
         } else return prev;
       });
-    } else setState((prev: Skill[]) => prev.filter((prevSkill: Skill) => prevSkill.name != skill.name))
+    } else removeSkill(skill);
+    return state;
+  };
+
+  const clearSkills = () => {
+    state.forEach((skill: Skill) => skill.isActive = false);
+    setState([]);
     return state;
   }
 
-  return (<SkillContext.Provider value={{ skills: state, updateSkills }}>{props.children}</SkillContext.Provider>)
+  const isSkillInList = (skills: Skill[], skill: Skill) =>
+    skills.find((prevSkill: Skill) => prevSkill.name === skill.name);
+
+  const removeSkill = (skill: Skill) => {
+    setState((prev: Skill[]) =>
+      prev.filter((prevSkill: Skill) => prevSkill.name !== skill.name)
+    );
+  };
+
+  return (
+    <SkillContext.Provider value={{ skills: state, updateSkills, clearSkills }}>
+      {props.children}
+    </SkillContext.Provider>
+  );
 };
