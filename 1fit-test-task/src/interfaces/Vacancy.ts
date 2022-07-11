@@ -1,4 +1,4 @@
-export interface Vacancy {
+export type RawVacancy = {
   id: number;
   company: string;
   logo: string;
@@ -13,3 +13,7 @@ export interface Vacancy {
   languages: Array<string>;
   tools: Array<string>;
 }
+
+export type Vacancy = RawVacancy & {
+  isActive: boolean;
+};

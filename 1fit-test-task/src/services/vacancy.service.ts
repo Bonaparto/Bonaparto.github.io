@@ -1,11 +1,11 @@
 import axios from "axios";
-import { Vacancy } from "../interfaces/Vacancy";
+import { RawVacancy } from "../interfaces/Vacancy";
 
 const baseURL = "http://localhost:3004";
 axios.defaults.baseURL = baseURL;
 
 export const VacancyService = {
   getVacanciesList() {
-    return axios.get<Vacancy[]>("/vacancies");
+    return axios.get<RawVacancy[]>("/vacancies");
   },
 };

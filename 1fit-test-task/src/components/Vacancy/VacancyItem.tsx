@@ -10,6 +10,8 @@ type Props = {
 export default function VacancyItem({ vacancy }: Props) {
   const context = useContext(SkillContext);
 
+  const [vacancyState, setVacancyState] = useState(vacancy.isActive);
+
   const skillNames: string[] = [
     vacancy.role,
     vacancy.level,
@@ -26,7 +28,7 @@ export default function VacancyItem({ vacancy }: Props) {
   );
   const [isVisible, setIsVisible] = useState(true);
 
-  const toggleState = (skillId: number) => {
+  const toggleSkillState = (skillId: number) => {
     setSkillList(
       skillList.map((skill) => {
         if (skill.id === skillId) {
@@ -37,6 +39,8 @@ export default function VacancyItem({ vacancy }: Props) {
       })
     );
   };
+
+  const toggleVacancyState = () => setVacancyState(!vacancyState);
 
   useEffect(() => {
     const activeSkills = context.skills;
@@ -97,7 +101,9 @@ export default function VacancyItem({ vacancy }: Props) {
                 style={{
                   textShadow:
                     vacancy.id === 1 ? "4px 4px rgba(0, 0, 0, 0.25)" : "none",
+                  color: vacancyState ? "#5ca5a5" : "#2b3939",
                 }}
+                onClick={toggleVacancyState}
               >
                 {vacancy.position}
               </h2>
@@ -121,13 +127,14 @@ export default function VacancyItem({ vacancy }: Props) {
                   className={`vacancy-item__skill-name ${
                     skill.isActive ? "btn-active" : ""
                   }`}
-                  onClick={() => toggleState(skill.id)}
+                  onClick={() => toggleSkillState(skill.id)}
                 >
                   {skill.name}
                 </h4>
               </li>
             ))}
           </ul>
+          {vacancyState && <div className="vacancy-item__mark" />}
         </li>
       )}
     </>

@@ -1,8 +1,9 @@
 import { useQuery } from "react-query";
+import { RawVacancy } from "../interfaces/Vacancy";
 import { VacancyService } from "../services/vacancy.service";
 
 export const useVacancies = () => {
-  const { data: vacancies, isLoading, isError } = useQuery(
+  const { data, isLoading, isError } = useQuery(
     "vacanciesList",
     async () => VacancyService.getVacanciesList(),
     {
@@ -13,5 +14,10 @@ export const useVacancies = () => {
     }
   );
 
-  return { vacanciesList: vacancies?.data, isLoading, isError };
+  const vacanciesList = data?.data.map((vacancy: RawVacancy) => ({
+    ...vacancy,
+    isActive: false,
+  }));
+
+  return { vacanciesList, isLoading, isError };
 };
