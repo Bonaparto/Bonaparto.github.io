@@ -16,8 +16,9 @@
 
   &__clear {
     cursor: pointer;
-    @include text-style($fw-bold, $fs-s, $lh-l, $tealPrimary);
+    @include text-style($fw-bold, $fs-s, $lh-l, $textGray);
     &:hover {
+      color: $tealPrimary;
       text-decoration: underline;
     }
   }
