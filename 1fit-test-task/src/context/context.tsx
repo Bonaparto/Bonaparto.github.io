@@ -24,10 +24,10 @@ export const SkillContextProvider = (props: Props) => {
   };
 
   const clearSkills = () => {
-    state.forEach((skill: Skill) => skill.isActive = false);
+    state.forEach((skill: Skill) => (skill.isActive = false));
     setState([]);
     return state;
-  }
+  };
 
   const isSkillInList = (skills: Skill[], skill: Skill) =>
     skills.find((prevSkill: Skill) => prevSkill.name === skill.name);
