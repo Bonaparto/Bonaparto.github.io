@@ -12,7 +12,7 @@ export default function Filter({ skill }: Props) {
   const removeFilter = () => {
     skill.isActive = false;
     filterState.updateSkills(skill);
-  }
+  };
 
   return (
     <li className="filter__item">

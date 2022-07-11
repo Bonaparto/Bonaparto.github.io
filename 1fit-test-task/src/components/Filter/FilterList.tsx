@@ -16,7 +16,9 @@ export default function FilterList() {
               <Filter key={skill.name} skill={skill} />
             ))}
           </ul>
-          <button className="filters__clear" onClick={clearFilters}>Clear</button>
+          <button className="filters__clear" onClick={clearFilters}>
+            Clear
+          </button>
         </div>
       )}
     </>
